@@ -16,10 +16,34 @@ public class UserController {
 	@Autowired
 	UserDao userDao;
 	
-	@RequestMapping("/Landing")
+	@RequestMapping(value={"/","/Landing"})
 	public ModelAndView homepage()
 	{
 		ModelAndView m=new ModelAndView("Landing");
+		
+	return m;
+		
+	}
+	@RequestMapping("/success")
+	public ModelAndView success()
+	{
+		ModelAndView m=new ModelAndView("success");
+		
+	return m;
+		
+	}
+	@RequestMapping("/Fail")
+	public ModelAndView homepage1()
+	{
+		ModelAndView m=new ModelAndView("Fail");
+		
+	return m;
+		
+	}
+	@RequestMapping("/index")
+	public ModelAndView Login()
+	{
+		ModelAndView m=new ModelAndView("index");
 		
 	return m;
 		

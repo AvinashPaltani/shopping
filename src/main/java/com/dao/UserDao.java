@@ -7,7 +7,7 @@ public class UserDao implements UserDaoInterface {
 
 	public boolean isValidUser(String name, String password) {
 		
-		if(name.equals("ram")&&password.equals("ramlal@123"))
+		if(name.equals("ram@gmail.com")&&password.equals("ramlal@123"))
      {
     	 return true;
 	 }

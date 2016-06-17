@@ -42,7 +42,7 @@
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="Landing.jsp">Home</a></li>
+                <li class="active"><a href="Landing">Home</a></li>
                 <!-- men -->
              
                 
@@ -77,8 +77,8 @@
             </ul>
           
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.jsp">Login</a></li>
-                <li><a href="Registration.jsp">New User</a></li>
+                <li><a href="index">Login</a></li>
+                <li><a href="Registration">New User</a></li>
             </ul>
         </div>
     </nav>
