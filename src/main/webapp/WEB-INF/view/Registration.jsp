@@ -1,5 +1,6 @@
 
 <%@include file="Header.jsp" %>
+<form:form action="add" method="post" commandName="register">
 
 <div class="container" id="wrap">
 	  <div class="row">
@@ -155,12 +156,12 @@
               <span class="help-block">By clicking Create my account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span>
                     <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
                         Create my account</button>
-            </form>          
+                    
           </div>
 </div>            
 </div>
 
-
+ </form:form> 
 
 
 

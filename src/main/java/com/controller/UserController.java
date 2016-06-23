@@ -3,18 +3,25 @@ package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
 import com.dao.UserDao;
+import com.model.Person;
+import com.service.PersonServiceImp;
 
 @Controller
 public class UserController {
 	
 	@Autowired
 	UserDao userDao;
+	@Autowired
+	 private PersonServiceImp personService;
 	
 	@RequestMapping(value={"/","/Landing"})
 	public ModelAndView homepage()
@@ -69,5 +76,28 @@ public class UserController {
 		mv.addObject("name",name);
 		return mv;
 		}
+	
+	@RequestMapping("/Registration")
+	public String Registeration(Model m)
+	{
+		Person p=new Person();
+		m.addAttribute("p",p);
+		
+		
+	return "Registration";
+	
+	}
+	
+	
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public String saveEmployee(@ModelAttribute("register")Person p )
+	   {
+	 personService.addPerson(p);
+	  
+	  return "index";
+	 }
+	
+	
+
 	
 }
