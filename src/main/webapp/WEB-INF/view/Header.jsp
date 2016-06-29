@@ -5,6 +5,16 @@
 <meta charset="ISO-8859-1">
 <title>Luxury Watches</title>
 <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/bootstrap/css/bootstrap-theme.min" rel="stylesheet">
+
+ <!-- <link
+href="https://cdnjs.cloudflare.com/ajax/libsl/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css"
+rel="stylesheet" />
+
+ <link
+href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
+rel="stylesheet" />
+ -->
 <!-- nav bar  -->
 <style type="text/css">
 	.navbar{

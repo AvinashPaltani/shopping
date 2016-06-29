@@ -4,6 +4,7 @@ package com.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,15 +14,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.UserDao;
 import com.model.Person;
+import com.service.PersonService;
 import com.service.PersonServiceImp;
 
 @Controller
 public class UserController {
 	
+	
 	@Autowired
-	UserDao userDao;
-	@Autowired
-	 private PersonServiceImp personService;
+	 private PersonService personService;
 	
 	@RequestMapping(value={"/","/Landing"})
 	public ModelAndView homepage()
@@ -56,7 +57,7 @@ public class UserController {
 		
 	}
 	
-	@RequestMapping("/isValidUser")
+	/*@RequestMapping("/isValidUser")
 	public ModelAndView showMesssage(@RequestParam(value  = "name") String name,
 			@RequestParam(value = "password") String password)
 	{
@@ -76,21 +77,17 @@ public class UserController {
 		mv.addObject("name",name);
 		return mv;
 		}
-	
-	@RequestMapping("/Registration")
-	public String Registeration(Model m)
-	{
-		Person p=new Person();
-		m.addAttribute("p",p);
-		
-		
-	return "Registration";
+	*/
+	@RequestMapping(value="/Registration")
+	public ModelAndView Registeration(Model m)
+	{	
+	return new ModelAndView("Registration");
 	
 	}
 	
 	
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String saveEmployee(@ModelAttribute("register")Person p )
+	@RequestMapping(value = "/add")
+	public String saveEmployee(@ModelAttribute("register")Person p,ModelMap map )
 	   {
 	 personService.addPerson(p);
 	  

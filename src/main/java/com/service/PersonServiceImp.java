@@ -7,17 +7,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dao.PersonDao;
 import com.model.Person;
 
-@Service("PersonService")
+@Service
 @Transactional
-
 public class PersonServiceImp implements PersonService {
 	
-	
-
 	 @Autowired
 	 private PersonDao personDao;
-	 
-	 @Transactional
 	 public void addPerson(Person person) {
 	  personDao.addPerson(person);
 	 }
