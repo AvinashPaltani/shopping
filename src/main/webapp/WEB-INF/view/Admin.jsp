@@ -4,7 +4,7 @@
 	Add a Person
 </h1>
 <hr>
-<c:url var="addAction" value="Admin/add" ></c:url>
+<c:url var="addAction" value="/Admin/add" ></c:url>
 
 <form:form action="${addAction}" commandName="product" method="post">
  <table>

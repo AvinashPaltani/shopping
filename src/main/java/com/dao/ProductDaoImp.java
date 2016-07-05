@@ -43,6 +43,8 @@ private SessionFactory sessionfactory;
 		/*Session session = this.sessionfactory.getCurrentSession();*/
 		Session s=sessionfactory.openSession();
 		Transaction t=s.beginTransaction();
+		System.out.println("update is"+p.getId());
+		System.out.println("updte is" +p.getBrand());
 		s.update(p);
 		t.commit();
 		s.close();

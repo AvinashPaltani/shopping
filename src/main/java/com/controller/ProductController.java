@@ -37,7 +37,7 @@ public class ProductController {
 	}
 	
 	
-	@RequestMapping(value= "Admin/add", method = RequestMethod.POST)
+	@RequestMapping(value= "/Admin/add", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute("product") Product p){
 		System.out.println("admin add");
 		
@@ -46,7 +46,9 @@ public class ProductController {
 				//new person, add it
 				System.out.println("add product" +p.getId());
 				this.productService.addProduct(p);
-			}else{
+			}
+			else
+			{
 				System.out.println("edit product" +p.getId());
 				//existing person, call update
 				this.productService.updatePerson(p);
@@ -72,7 +74,7 @@ public class ProductController {
         model.addAttribute("product", this.productService.getPersonById(id));
         model.addAttribute("list", this.productService.listProduct());
         return "Admin";
-	
+        
 	
 }
 }
