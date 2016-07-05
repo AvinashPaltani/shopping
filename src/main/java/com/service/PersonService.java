@@ -4,5 +4,9 @@ import com.model.Person;
 
 public interface PersonService {
 	 public void addPerson(Person person);
+	 public void isValidUser(String email , String password);
+	 
+		 
+	
 
 }

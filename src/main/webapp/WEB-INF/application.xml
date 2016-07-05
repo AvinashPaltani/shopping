@@ -26,7 +26,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.model.Person</value>
-				
+				<value>com.model.Product</value>
 					
 			</list>
 		</property>

@@ -1,6 +1,9 @@
 package com.controller;
  
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
-import com.dao.UserDao;
+
 import com.model.Person;
 import com.service.PersonService;
 import com.service.PersonServiceImp;
@@ -48,13 +51,14 @@ public class UserController {
 	return m;
 		
 	}
-	@RequestMapping("/index")
+	@RequestMapping("/Login")
 	public ModelAndView Login()
 	{
-		ModelAndView m=new ModelAndView("index");
+		ModelAndView m=new ModelAndView("Login");
 		
 	return m;
 		
+	
 	}
 	
 	/*@RequestMapping("/isValidUser")
@@ -91,10 +95,48 @@ public class UserController {
 	   {
 	 personService.addPerson(p);
 	  
-	  return "index";
+	  return "Login";
 	 }
 	
 	
-
 	
+	/*@RequestMapping(value="/Login",method=RequestMethod.POST)
+	public ModelAndView displayLogin(HttpServletRequest request, HttpServletResponse response)
+	{
+	ModelAndView model = new ModelAndView("login");
+	Person person = new Person();
+	model.addObject("Person",person);
+	
+	        return model;
+		    }*/
+		    @RequestMapping(value="/Login",method=RequestMethod.POST)
+	    public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("Person")Person person)	
+	    {
+		        ModelAndView model= null;
+		        
+		         personService.isValidUser(person.getEmail(), person.getPassword());
+		           /* if(isValidUser)
+		            {	
+	                System.out.println("User Login Successful");
+		                request.setAttribute("loggedInUser", person.getEmail());
+	
+	                model = new ModelAndView("welcome");	
+	            }
+		            else
+		            {
+		                model = new ModelAndView("Login");	
+	                    model.addObject("Person", person);
+		                request.setAttribute("message", "Invalid credentials!!");
+		            }
+		        }
+	
+	        catch(Exception e)
+		        {
+		            e.printStackTrace();
+		        }*/
+
+	 		        return model;
+	
+	    }
+
 }

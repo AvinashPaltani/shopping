@@ -34,7 +34,7 @@
 <!-- add images -->
 <div class="row">
  <div class="col-md-2">
- <img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" width="304" height="236" />
+ <a href=""><img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" width="304" height="236" /></a>
  </div>
    <div class="col-md-2">
    <img class="img-responsive" src="resources/images/w2.jpg" />

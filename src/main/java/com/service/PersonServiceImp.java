@@ -16,6 +16,11 @@ public class PersonServiceImp implements PersonService {
 	 public void addPerson(Person person) {
 	  personDao.addPerson(person);
 	 }
+	public void isValidUser(String email, String password) {
+		 personDao.validUser( email, password);
+		
+		
+	}
 
 	
 
