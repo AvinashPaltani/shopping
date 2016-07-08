@@ -14,18 +14,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
-
+import com.model.Contact;
 import com.model.Person;
+
 import com.service.PersonService;
 import com.service.PersonServiceImp;
 
 @Controller
 public class UserController {
 	
-	
+   //registration page
 	@Autowired
 	 private PersonService personService;
+     
+     
 	
 	@RequestMapping(value={"/","/Landing"})
 	public ModelAndView homepage()
@@ -49,8 +51,16 @@ public class UserController {
 		ModelAndView m=new ModelAndView("Fail");
 		
 	return m;
-		
 	}
+	@RequestMapping("/Contact")
+	public ModelAndView Contactus()
+	{
+		ModelAndView m=new ModelAndView("Contact");
+		
+	return m;
+	}
+	
+	
 	@RequestMapping("/Login")
 	public ModelAndView Login()
 	{
@@ -97,6 +107,15 @@ public class UserController {
 	  
 	  return "Login";
 	 }
+	//contact
+	@RequestMapping(value = "/addcontact")
+	public String saveEmployee(@ModelAttribute("contact")Contact c,ModelMap map )
+	   {
+	 personService.addContact(c);
+	  
+	  return "Landing";
+	 }
+	
 	
 	
 	

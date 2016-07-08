@@ -93,6 +93,7 @@ rel="stylesheet" />
                 <li><a href="Login">Login</a></li>
                 <li><a href="Registration">New User</a></li>
                 <li><a href="Admin">Admin </a></li>
+                <li><a href="Contact">Contact Us </a></li>
             </ul>
         </div>
     </nav>

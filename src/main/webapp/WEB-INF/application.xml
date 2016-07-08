@@ -27,6 +27,7 @@
 			<list>
 				<value>com.model.Person</value>
 				<value>com.model.Product</value>
+				<value>com.model.Contact</value>
 					
 			</list>
 		</property>

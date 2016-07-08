@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.model.Contact;
 import com.model.Person;
 
 @Repository
@@ -29,6 +30,11 @@ public class PersonDaoImp implements PersonDao {
 	q.uniqueResult();
 	
 		
+	}
+
+	public void addContact(Contact contact) {
+		
+		sessionFactory.getCurrentSession().save(contact);
 	}
 	
 	 
