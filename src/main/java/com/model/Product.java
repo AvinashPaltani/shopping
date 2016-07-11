@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Proxy;
+import org.springframework.web.multipart.MultipartFile;
 
 @Proxy(lazy=false)
 @Entity
@@ -20,9 +22,15 @@ public class Product implements Serializable {
 	 private int id;
 	 private int price;
 	 private String brand;
+	 @Transient
+	 private MultipartFile image;
 	
-
-
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 	public int getPrice() {
 		return price;
 	}

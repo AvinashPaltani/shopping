@@ -34,20 +34,20 @@
 <!-- add images -->
 <div class="row">
  <div class="col-md-2">
- <a href=""><img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" width="304" height="236" /></a>
+ <a href="Details/AEQ"><img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" width="304" height="236" /></a>
  </div>
    <div class="col-md-2">
-   <img class="img-responsive" src="resources/images/w2.jpg" />
+  <a href="Details/Th1791118j"> <img class="img-responsive" src="resources/images/w2.jpg" /></a>
  </div>
 
  <div class="col-md-2">
- <img class="img-responsive" src="resources/images/w3.jpg" />
+<a href="Details/YCS"> <img class="img-responsive" src="resources/images/w3.jpg" /></a>
  </div>
    <div class="col-md-2">
-   <img class="img-responsive" src="resources/images/w4.jpg" />
+<a href="Details/FS4552">  <img class="img-responsive" src="resources/images/w4.jpg" /></a>
  </div>
   <div class="col-md-2">
-   <img class="img-responsive" src="resources/images/w5.jpg" />
+  <a href="Details/ND5024DL04"> <img class="img-responsive" src="resources/images/w5.jpg" /></a>
  </div>
 </div>
 

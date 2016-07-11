@@ -92,14 +92,20 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
+		<!-- GSON -->
+		<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.6.2</version>
+		</dependency>
+		<!-- springframework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>4.0.1.RELEASE</version>
 		</dependency>
+ </dependencies>
 
-
-	</dependencies>
 	<build>
 		<finalName>Shopping</finalName>
 	</build>

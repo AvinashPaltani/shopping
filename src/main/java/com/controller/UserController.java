@@ -1,6 +1,10 @@
 package com.controller;
  
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,14 +13,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.model.Contact;
 import com.model.Person;
-
+import com.model.Product;
 import com.service.PersonService;
 import com.service.PersonServiceImp;
 
@@ -41,6 +47,23 @@ public class UserController {
 	public ModelAndView success()
 	{
 		ModelAndView m=new ModelAndView("success");
+		
+	return m;
+		
+	}
+	
+	@RequestMapping("/Admin")
+	public ModelAndView product()
+	{
+		ModelAndView m=new ModelAndView("Admin");
+		
+	return m;
+		
+	}
+	@RequestMapping("/Category")
+	public ModelAndView categroy()
+	{
+		ModelAndView m=new ModelAndView("Category");
 		
 	return m;
 		
@@ -157,5 +180,6 @@ public class UserController {
 	 		        return model;
 	
 	    }
-
+		    
+		   
 }
