@@ -2,14 +2,19 @@ package com.controller;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.io.File;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,10 +33,10 @@ import com.service.ProductService;
 
 @Controller
 public class ProductController {
-
+   private Path path;
 	@Autowired
 	private ProductService productService;
-	
+    	
 	@RequestMapping(value = "/Product")
 	public String listProduct(Model model) {
 		/*System.out.println("sfsf");*/
@@ -49,47 +54,26 @@ public class ProductController {
 	
 	
 	@RequestMapping(value= "/Admin/add", method = RequestMethod.POST)
-	public String addPerson(@ModelAttribute("product") Product p){
+	public String addPerson(@ModelAttribute("product") Product p,HttpServletRequest request){
 		System.out.println("admin add");
-		//HttpSession s=request.getSession();
-			System.out.println(p.getId());
-			if(p.getId() == 0){
-				//new person, add it
-				System.out.println("add product" +p.getId());
-				this.productService.addProduct(p);
-				 /* MultipartFile file=p.getImage();
-				     //  String originalfile=file.getOriginalFilename();
-				        String fileloc=s.getServletContext().getRealPath("/resources/pics/");
-				        System.out.println(fileloc);
-				      String filename=fileloc+"\\"+p.getId()+".jpg";
-				      System.out.println("filename is" +filename);
+	
+		productService.addProduct(p);
+				 MultipartFile image = p.getImage();
+			       String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+			       path = Paths.get(rootDirectory + "/resources/images/" + p.getId() + ".jpg");
+			   System.out.println(path);
+			       if(image != null && !image.isEmpty()){
+			           try {
+			        	   image.transferTo(new File(path.toString()));
+			               
+			           } catch (Exception ex){
+			               ex.printStackTrace();
+			               throw new RuntimeException("Product image saving failed", ex);
+			           }
+			       }
 				      
-				      try{
-				     byte b[]=file.getBytes();
-				     FileOutputStream fos=new FileOutputStream(filename);
-				     fos.write(b);
-				fos.close();
-				System.out.println(filename);
-				} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				}
-				      catch (Exception e) {
-				    // TODO Auto-generated catch block
-				    e.printStackTrace();
-				    }*/
-				      
-				   
-				        }
-			else
-			{
-				System.out.println("edit product" +p.getId());
-				//existing person, call update
-				this.productService.updatePerson(p);
-			}
-			//existing person, call update
+				
 			
-		
 		return "redirect:/Product";
 		
 	}
@@ -146,9 +130,46 @@ public class ProductController {
                   return mv;
 
     }
-
-
-	
     
+ //Brand details mapping
     
+    @RequestMapping("/Branddetails/{pname}")
+    public ModelAndView Product_Method(@PathVariable("pname") String name)
+    {
+                 
+                  List<Product> retrive=new ArrayList<Product>();
+                  //ProductService service=new ProductService();
+                 
+                  List<Product> list= productService.listProduct();
+                 System.out.println(list);
+                 Iterator<Product> i=list.iterator();
+                  while(i.hasNext())
+                  {
+                                 Product p=(Product)i.next();
+                                 if(p.getBrand().equals(name))
+                                 {
+                               
+     System.out.println("category is" +p.getBrand());
+                               
+     System.out.println("name" +name);
+                               
+     retrive.add(p);
+                                 }
+                                
+                  }
+                  String json = new Gson().toJson(retrive);
+                  System.out.println(json);
+                  
+                  ModelAndView mv=new ModelAndView("Branddetails");        
+                  mv.addObject("access",json);
+                  
+                 
+                  return mv;
+
+    }
+    @RequestMapping("/logout")
+    public String logout()
+    {
+    	return "logout";
+    }
 }

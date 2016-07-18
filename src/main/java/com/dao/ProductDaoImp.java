@@ -20,7 +20,7 @@ private SessionFactory sessionfactory;
 
 	public void addProduct(Product product) {
 		System.out.println("add product");
-		sessionfactory.getCurrentSession().saveOrUpdate(product);
+		sessionfactory.getCurrentSession().save(product);
 		
 	}
 	

@@ -22,6 +22,8 @@ public class Product implements Serializable {
 	 private int id;
 	 private int price;
 	 private String brand;
+	 private String desp ;
+	 private String name;
 	 @Transient
 	 private MultipartFile image;
 	
@@ -46,14 +48,14 @@ public class Product implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	private String name;
+	
 	 public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	private String desp ;
+	
 	 public Product()
 	 {}
 	 public int getId() {

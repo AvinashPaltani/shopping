@@ -6,7 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
 @Entity
+@Table(name="user")
+
 public class Person implements Serializable {
 	
    
@@ -19,7 +24,17 @@ public class Person implements Serializable {
     private String lastname;
     private String email;
     private String password;
-    public int getId() {
+    private boolean isActive=true; 
+    public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {

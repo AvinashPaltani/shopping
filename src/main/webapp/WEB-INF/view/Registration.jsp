@@ -37,5 +37,5 @@
 	</div>
 
 
-
+<%@include file="Footer.jsp" %>
 	

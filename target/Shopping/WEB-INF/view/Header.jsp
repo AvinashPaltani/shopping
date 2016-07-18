@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page isELIgnored="false" %>
 <html >
 <head>
 <meta charset="ISO-8859-1">
@@ -87,8 +90,10 @@ rel="stylesheet" />
             </ul>
           
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index">Login</a></li>
-                <li><a href="Register">New User</a></li>
+                <li><a href="Login">Login</a></li>
+                <li><a href="Registration">New User</a></li>
+                <li><a href="Admin">Admin </a></li>
+                <li><a href="Contact">Contact Us </a></li>
             </ul>
         </div>
     </nav>
