@@ -43,7 +43,8 @@
 	    </table>
 	    </div>
 	</div>  
-	
+<a href="${session.getContextPath()}/Shopping/AddCart/${p.id}">add to cart</a></div>
+
 	
 	
 	

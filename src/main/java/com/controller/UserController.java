@@ -226,8 +226,8 @@ public class UserController {
 		return m;
 		}	 
 	//web flow
-	 public Person initFlow(){
-			return new Person();
+	 public Product initFlow(){
+			return new Product();
 		}
 	 
 	 @RequestMapping("/AddCart")

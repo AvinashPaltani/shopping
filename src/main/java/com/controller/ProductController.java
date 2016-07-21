@@ -117,7 +117,7 @@ public class ProductController {
         
 }
     //details mapping
-    
+    Product product;
     @RequestMapping("/Details/{pname}")
     public ModelAndView Product_Method2(@PathVariable("pname") String name,@ModelAttribute("product") Product product)
     {

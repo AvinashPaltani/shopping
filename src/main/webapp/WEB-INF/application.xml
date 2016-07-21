@@ -30,6 +30,10 @@
 				<value>com.model.Contact</value>
 				<value>com.model.Category</value>
 				<value>com.model.User_Roles</value>
+				<value>com.model.Address</value>
+				<value>com.model.Shopping</value>
+				<value>com.model.Item</value>
+				<value>com.model.CartList</value>
 					
 			</list>
 		</property>
