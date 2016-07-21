@@ -51,6 +51,7 @@ private SessionFactory sessionfactory;
 		
 	}
 	public Product getPersonById(int id) {
+		System.out.println("dao id is"+id);
 		Session session = this.sessionfactory.getCurrentSession();		
 		Product p = (Product) session.load(Product.class, new Integer(id));
 		

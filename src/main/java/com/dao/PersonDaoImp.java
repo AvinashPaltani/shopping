@@ -2,6 +2,7 @@ package com.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.model.Contact;
 import com.model.Person;
+import com.model.Product;
 
 @Repository
 public class PersonDaoImp implements PersonDao {
@@ -35,6 +37,19 @@ public class PersonDaoImp implements PersonDao {
 	public void addContact(Contact contact) {
 		
 		sessionFactory.getCurrentSession().save(contact);
+	}
+
+	public List<Contact> getAllCustomer() {
+		Session s=sessionFactory.getCurrentSession();
+		return s.createQuery("from Contact").list();
+	}
+
+	public void removeQuery(int id) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Contact p = (Contact) session.load(Contact.class, new Integer(id));
+		
+			session.delete(p);
+		
 	}
 	
 	 

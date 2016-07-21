@@ -86,7 +86,7 @@ rel="stylesheet" />
 					<li class="dropdown"><a data-toggle="dropdown"
 						class="dropdown-toggle" href="#">MEN<b class="caret"></b></a>
 						<ul role="menu" class="dropdown-menu">
-							<li><a href="Branddetails/Titan">Titan</a></li>
+							<li><a href="Branddetails/Titan-Men">Titan</a></li>
 							<li><a href="Branddetails/Casion">Casion</a></li>
 							<li><a href="#">Fastrack</a></li>
 							<li><a href="#">Sonata</a></li>
@@ -100,7 +100,7 @@ rel="stylesheet" />
 					<li class="dropdown"><a data-toggle="dropdown"
 						class="dropdown-toggle" href="#">WOMEN<b class="caret"></b></a>
 						<ul role="menu" class="dropdown-menu">
-							<li><a href="Branddetails/Titan">Titan</a></li>
+							<li><a href="Branddetails/Titan-Women">Titan</a></li>
 							<li><a href="Branddetails/Casion">Casion</a></li>
 							<li><a href="#">Fastrack</a></li>
 							<li><a href="#">Sonata</a></li>
@@ -132,7 +132,7 @@ rel="stylesheet" />
 						<li><a href="Admin">Admin</a></li>
 				</c:if>
 				
-				<!--  -->
+			
 				</ul>
 			</div>
 		</nav>

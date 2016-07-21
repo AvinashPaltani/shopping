@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+ 
+	<!--  Executed when webFlow is triggered 
+	 <var name="cart" class="com.model.Shopping"></var>  -->
+	<on-start>
+	<!-- demohandler is java class available through annotated Demohandler.java class.here we are calling it’s initFlow() method. -->
+	  <evaluate expression="userController.initFlow()" result="flowScope.product"/>
+	</on-start>
+ 
+	
+	<view-state id="start" view="Details" model="flowScope.product">
+		<transition on="add" to="Addcart" />
+	</view-state>
+	
+	 <view-state id="Addcart" view="AddCart">
+ <!-- <evaluate expression="shoppingController.getaddress()" result="flowScope.address"></evaluate>  -->
+		 <transition on="goToAddress" to="address" />
+		 <transition on="submit" to="start" />
+		 </view-state>
+		 
+		 <view-state id="address" view="Address" model="flowScope.address">
+		<transition on="summary" to="order" />
+		<transition on="backcart" to="Addcart" />
+	</view-state>
+	
+	<view-state id="order" view="OrderSummary">
+ <!-- <evaluate expression="customer.insertaddress(flowScope.address,messageContext)" result="flowScope.address"></evaluate>  -->
+		 <transition on="success" to="credit" /> 
+		 <transition on="backaddress" to="address" /> 
+		 </view-state>
+		 
+		 <view-state id="credit" view="Payment"> 
+		<transition on="last" to="thankyouid" />
+		<transition on="backorder" to="order" /> 
+		 </view-state>
+		 
+	<view-state id="thankyouid" view="Thankyou" model="flowScope.address">
+		<transition on="submit" to="toHome" />
+	</view-state>
+ 
+	<end-state id="toHome" view="externalRedirect:Landing" />
+	
+	<global-transitions>
+		<transition on="home" to="toHome" />
+	<!--  	<transition on="error" to="toException" />-->
+	</global-transitions>
+</flow>

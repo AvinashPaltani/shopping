@@ -50,7 +50,7 @@ public class SuccessHandler extends SimpleUrlAuthenticationSuccessHandler  {
        if (isAdmin(roles)) {
             url = "/Admin";
         } else if (isUser(roles)) {
-            url = "/Home";
+            url = "/Landing";
         } 
  
         return url;

@@ -1,5 +1,11 @@
 <%@include file="Header.jsp" %>
 
+
+
+
+
+
+
 <!-- carousel coding-->
 
 <div class="bs-example">
@@ -34,20 +40,20 @@
 <!-- add images -->
 <div class="row">
  <div class="col-md-2">
- <a href="Details/AEQ"><img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" width="304" height="236" /></a>
+ <a href="Details/AEQ"><img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" style="width:200px;height:200px" /></a>
  </div>
    <div class="col-md-2">
-  <a href="Details/Th1791118j"> <img class="img-responsive" src="resources/images/w2.jpg" /></a>
+  <a href="Details/Th1791118j"> <img class="img-responsive" src="resources/images/w2.jpg" style="width:200px;height:200px"/></a>
  </div>
 
  <div class="col-md-2">
-<a href="Details/YCS"> <img class="img-responsive" src="resources/images/w3.jpg" /></a>
+<a href="Details/YCS"> <img class="img-responsive" src="resources/images/w3.jpg" style="width:200px;height:200px"/></a>
  </div>
    <div class="col-md-2">
-<a href="Details/FS4552">  <img class="img-responsive" src="resources/images/w4.jpg" /></a>
+<a href="Details/FS4552">  <img class="img-responsive" src="resources/images/w4.jpg" style="width:200px;height:200px"/></a>
  </div>
   <div class="col-md-2">
-  <a href="Details/ND5024DL04"> <img class="img-responsive" src="resources/images/w5.jpg" /></a>
+  <a href="Details/ND5024DL04"> <img class="img-responsive" src="resources/images/w7.jpg" style="width:200px;height:200px" /></a>
  </div>
 </div>
 

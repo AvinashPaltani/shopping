@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +27,13 @@ public class PersonServiceImp implements PersonService {
 	public void addContact(Contact contact) {
 	
 		personDao.addContact(contact);
+	}
+	public List<Contact> getAllCustomer() {
+		return personDao.getAllCustomer();
+	}
+	public void removeQuery(int id) {
+		this.personDao.removeQuery(id);
+		
 	}
 
 	

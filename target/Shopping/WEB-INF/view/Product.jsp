@@ -6,7 +6,7 @@
 <hr>
 <c:url var="addAction" value="/Admin/add" ></c:url>
 
- <form:form action="${addAction}" commandName="product"  modelAttribute="product"  enctype="multipart/form-data" method="post"  >
+ <form:form action="${addAction}" commandName="product"   method="post" enctype="multipart/form-data" >
  <table>
 	 <c:if test="${!empty product.name}">
 	<tr>
@@ -55,15 +55,13 @@
 	</tr>
 	 <tr>
         <td>
-            <form:label path="image">
-                <spring:message text="Photo to upload"/>
-            </form:label>
+            Photo To Upload
         </td>
         <td>
-            <form:input type="file" path="image" />
+            <form:input path="image"  type="file" />
         </td><td></td>
         
-    </tr> 
+    </tr>  
 	<tr>
 		<td colspan="2">
 			<c:if test="${empty product.name}">

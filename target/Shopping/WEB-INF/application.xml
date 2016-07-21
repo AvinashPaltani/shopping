@@ -29,6 +29,7 @@
 				<value>com.model.Product</value>
 				<value>com.model.Contact</value>
 				<value>com.model.Category</value>
+				<value>com.model.User_Roles</value>
 					
 			</list>
 		</property>

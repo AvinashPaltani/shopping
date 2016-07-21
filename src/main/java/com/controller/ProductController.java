@@ -9,8 +9,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.io.BufferedOutputStream;
 import java.io.File;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -34,6 +36,7 @@ import com.service.ProductService;
 @Controller
 public class ProductController {
    private Path path;
+   static int data=1; 
 	@Autowired
 	private ProductService productService;
     	
@@ -58,7 +61,7 @@ public class ProductController {
 		System.out.println("admin add");
 	
 		productService.addProduct(p);
-				 MultipartFile image = p.getImage();
+				/* MultipartFile image = p.getImage();
 			       String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 			       path = Paths.get(rootDirectory + "/resources/images/" + p.getId() + ".jpg");
 			   System.out.println(path);
@@ -70,12 +73,31 @@ public class ProductController {
 			               ex.printStackTrace();
 			               throw new RuntimeException("Product image saving failed", ex);
 			           }
-			       }
+			       }*/
 				      
-				
-			
+		ServletContext context=request.getServletContext();
+		String path=context.getRealPath("/resources/pics/"+p.getId()+".jpg");
+		System.out.println("Path= "+path);	
+		System.out.println("Filename = "+p.getImage().getOriginalFilename());		 
+		File f=new File(path);		 
+		if(!p.getImage().isEmpty())
+		 {
+		try 
+		{
+		//filename=p.getImagePath().getOriginalFilename();
+		byte[] bytes=p.getImage().getBytes();
+		BufferedOutputStream bs=new BufferedOutputStream(new FileOutputStream(f));
+		bs.write(bytes);
+		bs.close();
+		System.out.println("Image uploaded");		
+		//productService.addProduct(p);
+		System.out.println("DataInserted");
+		}
+		catch(Exception ex)
+		  {
+		    System.out.println(ex.getMessage());          }    
+       	 }
 		return "redirect:/Product";
-		
 	}
 		
 	
@@ -97,18 +119,23 @@ public class ProductController {
     //details mapping
     
     @RequestMapping("/Details/{pname}")
-    public ModelAndView Product_Method2(@PathVariable("pname") String name)
+    public ModelAndView Product_Method2(@PathVariable("pname") String name,@ModelAttribute("product") Product product)
     {
-                 
+    	
+        System.out.println("product id is" +product.getId());
+       
                   List<Product> retrive=new ArrayList<Product>();
                   //ProductService service=new ProductService();
                  
                   List<Product> list= productService.listProduct();
                  System.out.println(list);
+               //  productService.getPersonById(p1.getId());
+                 
                  Iterator<Product> i=list.iterator();
                   while(i.hasNext())
                   {
                                  Product p=(Product)i.next();
+                                 System.out.println("json id us" +product.getId());
                                  if(p.getName().equals(name))
                                  {
                                
@@ -130,7 +157,7 @@ public class ProductController {
                   return mv;
 
     }
-    
+     
  //Brand details mapping
     
     @RequestMapping("/Branddetails/{pname}")

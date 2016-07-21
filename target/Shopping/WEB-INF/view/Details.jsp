@@ -45,3 +45,8 @@
 	       
 	    </table></div>
 	</div> 
+	
+	<input type="submit" name="_eventid_add" value="Add to Cart">
+	
+	
+	<%@include file="Footer.jsp" %>

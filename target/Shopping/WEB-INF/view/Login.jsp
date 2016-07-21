@@ -5,11 +5,19 @@
 <h2> login page </h2>
 </div>
 
-<form:form class="form-horizontal " action="isValidUser" method="post" >
+<div class="col-sm-10">
+<c:if test="${not empty msg}">
+                <div class="msg" style="color:#ff0000;">${msg}</div>
+            </c:if>
+             <c:if test="${not empty error}">
+                <div class="error" style="color: #ff0000;">${error}</div>
+            </c:if> </div>​
+
+<form:form class="form-horizontal " action="perform_login" method="post" commandName="validate">
     <div class="form-group">
         <label for="inputEmail" class="control-label col-xs-2">Email:</label>
         <div class="col-xs-5">
-            <input type="email" class="form-control" id="inputEmail" name="name" placeholder="Email">
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
         </div>
     </div>
     <div class="form-group">
@@ -28,6 +36,7 @@
     <div class="form-group">
         <div class="col-xs-offset-2 col-xs-10">
             <button type="submit" class="btn btn-primary">Login</button>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }"/>
         </div>
     </div>
 </form:form>

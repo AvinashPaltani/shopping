@@ -19,7 +19,16 @@
 	
 	 
 	<div  ng-app="searchApp">
-	<div ng-controller="TableCtrl">
+	<div class="container" ng-controller="TableCtrl">
+	<div class="search"> 
+ 	<div class ="col-sm-8"></div>
+ 	<div class="col-sm-4">
+    <input type="search" ng-model="searchText" class="form-control" id="inputSearch" placeholder="Search Here" />
+     </div>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
 	  <table class ="table table-bordered">
 	  <thead>
 	  <tr>
@@ -32,14 +41,11 @@
 	  <tbody>
 	  
 	    
-	   <tr  ng-repeat="p in prod">
+	   <tr  ng-repeat="p in prod|filter:searchText">
 	    <td>{{ p.name }}</td>
 	    <td>{{p.brand}}</td>
 	    <td>{{p.price|currency}}</td>
 	       <td>{{p.desp}}</td>
-	     <td>
-	       
-	   
 	    </tr>   
 	</tbody>         
 	       

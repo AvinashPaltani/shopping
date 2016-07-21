@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+ 
+	  
+	 <!-- <var name="product" class="com.model.Product"></var>   -->
+	<on-start>
+	<!-- demohandler is java class available through annotated Demohandler.java class.here we are calling it’s initFlow() method. -->
+	  <evaluate expression="userController.initFlow()" result="flowScope.person"/>
+	</on-start>
+ 
+	
+	 <!-- <view-state id="start" view="Details" model="flowScope.product">
+		<transition on="add" to="Addcart" />
+	</view-state>  -->
+	
+	 <view-state id="start" view="AddCart" model="flowScope.person">
+ <!-- <evaluate expression="shoppingController.getaddress()" result="flowScope.address"></evaluate>  -->
+		<!--  <transition on="goToAddress" to="address" /> -->
+		  <transition on="submit" to="address"/>  
+		 </view-state>
+		 
+		 
+		<!--  <action-state id="validate">
+		<evaluate expression="userController.validateDetails(userBean,messageContext)"></evaluate>
+		<transition on="success" to="address" />
+		<transition on="failure" to="start" />
+	</action-state>
+		 
+		 
+		  -->
+		 
+		 <view-state id="address" view="Address" model="flowScope.person">
+		<transition on="submit" to="order" />
+		<!-- <transition on="backcart" to="start" /> -->
+	</view-state>
+	
+	<view-state id="order" view="OrderSummary">
+ <!-- <evaluate expression="customer.insertaddress(flowScope.address,messageContext)" result="flowScope.address"></evaluate>  -->
+		 <transition on="success" to="credit" /> 
+		 <transition on="backaddress" to="address" /> 
+		 </view-state>
+		 
+		 <view-state id="credit" view="Payment"> 
+		<transition on="last" to="thankyouid" />
+		<transition on="backorder" to="order" /> 
+		 </view-state>
+		 
+	<view-state id="thankyouid" view="Thankyou" model="flowScope.address">
+		<transition on="submit" to="toHome" />
+	</view-state>
+ 
+	<end-state id="toHome" view="externalRedirect:Landing" />
+	
+	<global-transitions>
+		<transition on="home" to="toHome" />
+	<!--  	<transition on="error" to="toException" />-->
+	</global-transitions>
+</flow>

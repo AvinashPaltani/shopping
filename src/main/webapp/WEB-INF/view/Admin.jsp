@@ -3,7 +3,7 @@
 </h1>
 <HR>
 <c:if test="${pageContext.request.userPrincipal.name=='admin@gmail.com'}">
-<a href="Category">Add Category</a>
+<a href="CustomerQuery">View Customer Query</a><span class="badge">${Customer}</span>
 <br>
 
 <a href="Product">Add Product</a>

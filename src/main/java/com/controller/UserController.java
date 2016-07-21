@@ -1,12 +1,11 @@
 package com.controller;
  
+import org.springframework.binding.message.MessageBuilder;
+import org.springframework.binding.message.MessageContext;
+import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +20,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.gson.Gson;
 import com.model.Contact;
 import com.model.LoginUser;
 import com.model.Person;
 import com.model.Product;
 import com.model.User_Roles;
 import com.service.PersonService;
-import com.service.PersonServiceImp;
 import com.service.User_RolesService;
+
+
+
+
+
 
 @Controller
 public class UserController {
@@ -59,13 +61,32 @@ public class UserController {
 	}
 	
 	@RequestMapping("/Admin")
-	public ModelAndView product()
-	{
-		ModelAndView m=new ModelAndView("Admin");
+	public ModelAndView product(Model m)
+	{   
+		int c=0;
+		List<Contact> a=personService.getAllCustomer();
+		for(Object o:a)
+		 c++;
+		m.addAttribute("Customer", c);
+		ModelAndView mv=new ModelAndView("Admin");
 		
-	return m;
-		
+	return mv;
 	}
+	
+	@RequestMapping("/CustomerQuery")
+	 public String viewContact(Model m)
+	 {
+	 List<Contact>l= personService.getAllCustomer();
+	 m.addAttribute("customer",l);
+	 return "CustomerQuery";
+	 }
+	//delete customer query
+	@RequestMapping("/delete/{id}")
+    public String removeContact(@PathVariable("id") int id){
+		
+        this.personService.removeQuery(id);
+        return "redirect:/CustomerQuery";
+    }
 	@RequestMapping("/Category")
 	public ModelAndView categroy()
 	{
@@ -196,6 +217,7 @@ public class UserController {
 	 return "Login";
 	 }
 	
+	
 	 @RequestMapping("/Home")
 		public ModelAndView home()
 		{
@@ -203,7 +225,20 @@ public class UserController {
 			
 		return m;
 		}	 
+	//web flow
+	 public Person initFlow(){
+			return new Person();
+		}
+	 
+	 @RequestMapping("/AddCart")
+	 public String Order() {
+          return "redirect:/memberShip";
+    }
+	 
 	
-		
-		   
-}
+	}
+	 
+	 
+	 
+	
+

@@ -72,7 +72,7 @@
             </address>
             <address>
                 <strong>DA<sub>3</sub>M</strong><br>
-                <a href="mailto:#">first.last@example.com</a>
+                <a href="mailto:#">DA<SUB>3</SUB>M.Company@gmail.com</a>
             </address>
             </form:form>
         </div>

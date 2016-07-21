@@ -36,6 +36,7 @@ public class ProductServiceImp implements ProductService {
 	}
 
 	public Product getPersonById(int id) {
+		
 		return this.productDao.getPersonById(id);
 	}
 

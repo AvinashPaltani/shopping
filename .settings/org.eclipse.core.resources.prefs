@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/controller/ProductController.java=UTF-8
+encoding//src/main/java/com/controller/UserController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/view/About\ Us.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/Faq.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/Header.jsp=UTF-8
