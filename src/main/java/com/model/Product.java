@@ -61,19 +61,14 @@ public class Product implements Serializable {
 	 public int getId() {
 			return id;
 		}
-
-
 		public void setId(int id) {
 			this.id = id;
 		}
-	
-
 	public String getDesp() {
 		return desp;
 	}
 	public void setDesp(String desp) {
 		this.desp = desp;
 	}
-	
-	
+		
 }

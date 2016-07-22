@@ -34,6 +34,9 @@
 				<value>com.model.Shopping</value>
 				<value>com.model.Item</value>
 				<value>com.model.CartList</value>
+				<value>com.model.Cart</value>
+			
+				
 					
 			</list>
 		</property>

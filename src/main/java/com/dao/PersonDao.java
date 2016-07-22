@@ -2,6 +2,7 @@ package com.dao;
 
 import java.util.List;
 
+import com.model.Address;
 import com.model.Contact;
 import com.model.Person;
 
@@ -11,4 +12,5 @@ public interface PersonDao {
 	public void addContact(Contact contact);
 	public List<Contact> getAllCustomer();
 	public void removeQuery(int id);
+	public String insertAddress(Address address);
 }

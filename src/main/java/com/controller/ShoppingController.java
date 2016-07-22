@@ -30,7 +30,7 @@ public class ShoppingController {
 	Shopping cart;
 
 
-	@RequestMapping("/order/{id}")
+	@RequestMapping("/AddCart/{id}")
 	public String ordernow(@PathVariable(value = "id") int id, ModelMap mm, HttpSession session) {
 System.out.println("product id is "+id);
 		if (session.getAttribute("cart") == null) {

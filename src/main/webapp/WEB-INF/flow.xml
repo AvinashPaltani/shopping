@@ -11,18 +11,9 @@
 	  <evaluate expression="userController.initFlow()" result="flowScope.cart"/>
 	</on-start>
  
-	 <!-- if not specified the first view state is the starting state -->
-	<!-- <view-state id="start" view="productdetails" model="flowScope.product">
-	   <transition on="submit" to="orderid"/>
-	</view-state> -->
- 
 	
-	<!-- <action-state id="validate">
-		<evaluate expression="demohandler.validateDetails(userBean,messageContext)"></evaluate>
-		<transition on="success" to="confirmDetails" />
-		<transition on="failure" to="start" />
-	</action-state>
-  -->
+	
+	
 	<view-state id="start" view="AddCart" model="flowScope.cart">
 		<transition on="submit" to="login" />
 	</view-state>
@@ -38,13 +29,13 @@
 	</view-state>
 	
 	<action-state id="insertaddress">
- <evaluate expression="customer.insertaddress(flowScope.address,messageContext)" result="flowScope.address"></evaluate> 
+ <evaluate expression="userController.insertaddress(flowScope.address,messageContext)" result="flowScope.address"></evaluate> 
 		 <transition on="success" to="getadd" /> 
 		
 		 </action-state>
 		 
 		 <action-state id="getadd">
- <evaluate expression="customer.getadd()" result="flowScope.address"></evaluate> 
+ <evaluate expression="userController.getadd()" result="flowScope.address"></evaluate> 
 		 <transition on="success" to="thankyouid" /> 
 		
 		 </action-state>

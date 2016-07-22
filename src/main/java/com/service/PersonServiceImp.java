@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.dao.PersonDao;
+import com.model.Address;
 import com.model.Contact;
 import com.model.Person;
 
@@ -34,6 +35,10 @@ public class PersonServiceImp implements PersonService {
 	public void removeQuery(int id) {
 		this.personDao.removeQuery(id);
 		
+	}
+	public String insertAddress(Address address) {
+		personDao.insertAddress(address);
+		return "success";
 	}
 
 	

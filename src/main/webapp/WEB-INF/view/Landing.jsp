@@ -1,11 +1,6 @@
 <%@include file="Header.jsp" %>
 
 
-
-
-
-
-
 <!-- carousel coding-->
 
 <div class="bs-example">
@@ -40,23 +35,23 @@
 <!-- add images -->
 <div class="row">
  <div class="col-md-2">
- <a href="Details/AEQ"><img class="img-responsive" src="resources/images/w1.jpg"  alt="Cinque Terre" style="width:200px;height:200px" /></a>
+ <a href="Details/AEQ"><img class="img-thumbnail" src="resources/images/w1.jpg"  alt="Cinque Terre" style="width:200px;height:200px" /></a>
  </div>
    <div class="col-md-2">
-  <a href="Details/Th1791118j"> <img class="img-responsive" src="resources/images/w2.jpg" style="width:200px;height:200px"/></a>
+  <a href="Details/Th1791118j"> <img class="img-thumbnail" src="resources/images/w2.jpg" style="width:200px;height:200px"/></a>
  </div>
 
  <div class="col-md-2">
-<a href="Details/YCS"> <img class="img-responsive" src="resources/images/w3.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/YCS"> <img class="img-thumbnail" src="resources/images/w3.jpg" style="width:200px;height:200px"/></a>
  </div>
    <div class="col-md-2">
-<a href="Details/FS4552">  <img class="img-responsive" src="resources/images/w4.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/FS4552">  <img class="img-thumbnail" src="resources/images/w4.jpg" style="width:200px;height:200px"/></a>
  </div>
   <div class="col-md-2">
-  <a href="Details/ND5024DL04"> <img class="img-responsive" src="resources/images/w7.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/ND5024DL04"> <img class="img-thumbnail" src="resources/images/w7.jpg" style="width:200px;height:200px" /></a>
  </div>
  <div class="col-md-2">
-  <a href="Details/ND5024DL04"> <img class="img-responsive" src="resources/images/w8.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/ND5024DL04"> <img class="img-thumbnail" src="resources/images/w8.jpg" style="width:200px;height:200px" /></a>
  </div>
 </div>
 
@@ -64,22 +59,22 @@
 <!-- row 2 titan men -->
 <div class="row">
  <div class="col-md-2">
- <a href="Details/1632SM02"><img class="img-responsive" src="resources/images/t1.jpg"  alt="watches" style="width:200px;height:200px" /></a>
+ <a href="Details/1632SM02"><img class="img-thumbnail" src="resources/images/t1.jpg"  alt="watches" style="width:200px;height:200px" /></a>
  </div>
    <div class="col-md-2">
-  <a href="Details/SM02"> <img class="img-responsive" src="resources/images/t2.jpg" style="width:200px;height:200px"/></a>
+  <a href="Details/SM02"> <img class="img-thumbnail" src="resources/images/t2.jpg" style="width:200px;height:200px"/></a>
  </div>
  <div class="col-md-2">
-<a href="Details/NF9308BM01J"> <img class="img-responsive" src="resources/images/t3.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/NF9308BM01J"> <img class="img-thumbnail" src="resources/images/t3.jpg" style="width:200px;height:200px"/></a>
  </div>
    <div class="col-md-2">
-<a href="Details/9322WL02">  <img class="img-responsive" src="resources/images/t4.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/9322WL02">  <img class="img-thumbnail" src="resources/images/t4.jpg" style="width:200px;height:200px"/></a>
  </div>
   <div class="col-md-2">
-  <a href="Details/NE9323SM02J"> <img class="img-responsive" src="resources/images/t5.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/NE9323SM02J"> <img class="img-thumbnail" src="resources/images/t5.jpg" style="width:200px;height:200px" /></a>
  </div>
  <div class="col-md-2">
-  <a href="Details/	NE9314BM01"> <img class="img-responsive" src="resources/images/t6.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/	NE9314BM01"> <img class="img-thumbnail" src="resources/images/t6.jpg" style="width:200px;height:200px" /></a>
  </div>
 </div>
 
@@ -88,22 +83,22 @@
 <!-- row 3 women-->
 <div class="row">
  <div class="col-md-2">
- <a href="Details/AEQ"><img class="img-responsive" src="resources/images/f1.jpg"  alt="watches" style="width:200px;height:200px" /></a>
+ <a href="Details/AEQ"><img class="img-thumbnail" src="resources/images/f1.jpg"  alt="watches" style="width:200px;height:200px" /></a>
  </div>
    <div class="col-md-2">
-  <a href="Details/Th1791118j"> <img class="img-responsive" src="resources/images/f2.jpg" style="width:200px;height:200px"/></a>
+  <a href="Details/Th1791118j"> <img class="img-thumbnail" src="resources/images/f2.jpg" style="width:200px;height:200px"/></a>
  </div>
  <div class="col-md-2">
-<a href="Details/6111SP02C"> <img class="img-responsive" src="resources/images/f3.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/6111SP02C"> <img class="img-thumbnail" src="resources/images/f3.jpg" style="width:200px;height:200px"/></a>
  </div>
    <div class="col-md-2">
-<a href="Details/FS4552">  <img class="img-responsive" src="resources/images/f4.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/FS4552">  <img class="img-thumbnail" src="resources/images/f4.jpg" style="width:200px;height:200px"/></a>
  </div>
   <div class="col-md-2">
-  <a href="Details/ND5024DL04"> <img class="img-responsive" src="resources/images/f5.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/ND5024DL04"> <img class="img-thumbnail" src="resources/images/f5.jpg" style="width:200px;height:200px" /></a>
  </div>
  <div class="col-md-2">
-  <a href="Details/NE6023WL01"> <img class="img-responsive" src="resources/images/f7.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/NE6023WL01"> <img class="img-thumbnail" src="resources/images/f7.jpg" style="width:200px;height:200px" /></a>
  </div>
 </div>
 
@@ -111,22 +106,22 @@
 <!-- row 4 titan men -->
 <div class="row">
  <div class="col-md-2">
- <a href="Details/2511SM06"><img class="img-responsive" src="resources/images/tw1.jpg"  alt="watches" style="width:200px;height:200px" /></a>
+ <a href="Details/2511SM06"><img class="img-thumbnail" src="resources/images/tw1.jpg"  alt="watches" style="width:200px;height:200px" /></a>
  </div>
    <div class="col-md-2">
-  <a href="Details/2511WM05"> <img class="img-responsive" src="resources/images/tw2.jpg" style="width:200px;height:200px"/></a>
+  <a href="Details/2511WM05"> <img class="img-thumbnail" src="resources/images/tw2.jpg" style="width:200px;height:200px"/></a>
  </div>
  <div class="col-md-2">
-<a href="Details/2417SM01"> <img class="img-responsive" src="resources/images/tw3.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/2417SM01"> <img class="img-thumbnail" src="resources/images/tw3.jpg" style="width:200px;height:200px"/></a>
  </div>
    <div class="col-md-2">
-<a href="Details/2521SM02">  <img class="img-responsive" src="resources/images/tw4.jpg" style="width:200px;height:200px"/></a>
+<a href="Details/2521SM02">  <img class="img-thumbnail" src="resources/images/tw4.jpg" style="width:200px;height:200px"/></a>
  </div>
   <div class="col-md-2">
-  <a href="Details/NH9971WM01J"> <img class="img-responsive" src="resources/images/tw5.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/NH9971WM01J"> <img class="img-thumbnail" src="resources/images/tw5.jpg" style="width:200px;height:200px" /></a>
  </div>
  <div class="col-md-2">
-  <a href="Details/NH9931WM01J"> <img class="img-responsive" src="resources/images/tw6.jpg" style="width:200px;height:200px" /></a>
+  <a href="Details/NH9931WM01J"> <img class="img-thumbnail" src="resources/images/tw6.jpg" style="width:200px;height:200px" /></a>
  </div>
 </div>
 

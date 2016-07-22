@@ -7,9 +7,11 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.model.Address;
 import com.model.Contact;
 import com.model.Person;
 import com.model.Product;
@@ -50,6 +52,17 @@ public class PersonDaoImp implements PersonDao {
 		
 			session.delete(p);
 		
+	}
+
+	public String insertAddress(Address address) {
+		System.out.println("insert address");
+		Session s=sessionFactory.openSession();
+		Transaction t=s.beginTransaction();
+		s.saveOrUpdate(address);
+		System.out.println("insert addresssss");
+		t.commit();
+		s.close();
+		return "success";
 	}
 	
 	 

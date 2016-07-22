@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.model.Address;
 import com.model.Contact;
 import com.model.LoginUser;
 import com.model.Person;
@@ -27,11 +28,6 @@ import com.model.Product;
 import com.model.User_Roles;
 import com.service.PersonService;
 import com.service.User_RolesService;
-
-
-
-
-
 
 @Controller
 public class UserController {
@@ -146,15 +142,6 @@ public class UserController {
 	}
 	
 	
-/*	@RequestMapping("/Login")
-	public ModelAndView Login()
-	{
-		ModelAndView m=new ModelAndView("Login");
-		
-	return m;
-	}
-*/	
-	
 	
 	@RequestMapping(value="/Registration")
 	public ModelAndView Registeration(Model m)
@@ -234,7 +221,19 @@ public class UserController {
 	 public String Order() {
           return "redirect:/memberShip";
     }
-	 
+	 Address address;
+	 public String insertaddress(Address address,MessageContext messageContext) {
+		 System.out.println("user controller insert address");
+	 this.address=address;
+	 	String str=this.personService.insertAddress(address);
+	 	return str;
+
+	 	
+	 }
+	 public Address getadd()
+	 {
+	 	return address;
+	 }
 	
 	}
 	 

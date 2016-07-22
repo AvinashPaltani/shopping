@@ -60,21 +60,7 @@ public class ProductController {
 	public String addPerson(@ModelAttribute("product") Product p,HttpServletRequest request){
 		System.out.println("admin add");
 	
-		productService.addProduct(p);
-				/* MultipartFile image = p.getImage();
-			       String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-			       path = Paths.get(rootDirectory + "/resources/images/" + p.getId() + ".jpg");
-			   System.out.println(path);
-			       if(image != null && !image.isEmpty()){
-			           try {
-			        	   image.transferTo(new File(path.toString()));
-			               
-			           } catch (Exception ex){
-			               ex.printStackTrace();
-			               throw new RuntimeException("Product image saving failed", ex);
-			           }
-			       }*/
-				      
+		productService.addProduct(p);		      
 		ServletContext context=request.getServletContext();
 		String path=context.getRealPath("/resources/pics/"+p.getId()+".jpg");
 		System.out.println("Path= "+path);	
